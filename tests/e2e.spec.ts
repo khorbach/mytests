@@ -2,7 +2,7 @@ import { test, expect } from '@playwright/test';
 
 const baseUrl = 'https://jsonplaceholder.typicode.com';
 
-// Test 1: Get All Comments for a Specific Post
+// Test #1: Get All Comments for a Specific Post
 test('Get All Comments for postId=2', async () => {
 
   // Step 1: Send GET request to retrieve comments for postId=2
@@ -17,7 +17,7 @@ test('Get All Comments for postId=2', async () => {
     expect(comment.postId).toBe(2);
   });
 
-  // Step 5: Verify that each comment has id, name, email, and body fields, and that they are not empty
+  // Step 4: Verify that each comment has id, name, email, and body fields, and that they are not empty
   comments.forEach((comment: any) => {
     expect(comment).toHaveProperty('id');
     expect(comment.id).not.toBeNull();
@@ -29,7 +29,7 @@ test('Get All Comments for postId=2', async () => {
     expect(comment.body).not.toBe('');
   });
 
-  // Step 6: Verify fields' data types
+  // Step 5: Verify fields' data types
   comments.forEach((comment: any) => {
     expect(typeof comment.id).toBe('number');
     expect(typeof comment.name).toBe('string');
@@ -39,7 +39,7 @@ test('Get All Comments for postId=2', async () => {
 });
 
 
-// Test 2: Create and Delete a Post
+// Test #2: Create and Delete a Post
 test('Create and Delete a Post', async () => {
 
   // Step 1: Send POST API request to /posts
@@ -77,7 +77,7 @@ test('Create and Delete a Post', async () => {
   // Step 7: Send GET request to verify that post is deleted
   const getDeletedPostResponse = await fetch(`${baseUrl}/posts/${postId}`);
 
-  // Step 9: Verify the response status code is 404
+  // Step 8: Verify the response status code is 404
   expect(getDeletedPostResponse.status).toBe(404); 
 });
 
