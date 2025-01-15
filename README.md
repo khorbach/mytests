@@ -1,7 +1,7 @@
 # **Installation**
 
 1. Clone the repository:
-`git clone https://github.com/khorbach/tests.git`
+`git clone https://github.com/khorbach/mytests.git`
 
 2. Install the required dependencies:
 `npm install`
